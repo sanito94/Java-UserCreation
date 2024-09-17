@@ -8,4 +8,6 @@ public interface UserService {
     UserDto getUserById(int userId);
 
     UserDto saveNewUser(UserDto user);
+
+    void updateUser(int userId, UserDto user);
 }

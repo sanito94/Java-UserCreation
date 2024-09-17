@@ -40,4 +40,9 @@ public class UserServiceImpl implements UserService {
                 .build();
     }
 
+    @Override
+    public void updateUser(int userId, UserDto user) {
+        
+    }
+
 }
