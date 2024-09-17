@@ -39,7 +39,7 @@ public class UserController {
         String test = String.valueOf(savedDto.getId());
         headers.add("Location", "/api/user" + test.toString());
 
-        return new ResponseEntity(headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(headers, HttpStatus.CREATED);
 
     }
 
@@ -48,13 +48,13 @@ public class UserController {
 
         userService.updateUser(userId, user);
 
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @DeleteMapping({ "/{userId}" })
     public ResponseEntity deleteUser(@PathVariable("userId") int userId) {
         userService.deleteById(userId);
         
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
