@@ -12,9 +12,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto getUserById(int userId) {
         Random rand = new Random();
-   
-        int rand_int1 = rand.nextInt(100000);
 
+        int rand_int1 = rand.nextInt(100000);
 
         return UserDto.builder().id(rand_int1)
                 .firstName("Mitko")
@@ -22,6 +21,22 @@ public class UserServiceImpl implements UserService {
                 .dateOfBirth("17.04.1994")
                 .email("hasantikradetoka@gmail.com")
                 .phoneNumber("111111111")
+                .build();
+    }
+
+    @Override
+    public UserDto saveNewUser(UserDto user) {
+        Random rand = new Random();
+
+        int rand_int1 = rand.nextInt(100000);
+
+        return UserDto.builder()
+                .id(rand_int1)
+                .firstName("Djoni")
+                .lastName("Banani")
+                .dateOfBirth("19.11.1999")
+                .email("djingibi@gmail.com")
+                .phoneNumber("+3592221199")
                 .build();
     }
 

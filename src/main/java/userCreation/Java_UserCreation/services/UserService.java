@@ -6,4 +6,6 @@ import userCreation.Java_UserCreation.web.model.UserDto;
 
 public interface UserService {
     UserDto getUserById(int userId);
+
+    UserDto saveNewUser(UserDto user);
 }
