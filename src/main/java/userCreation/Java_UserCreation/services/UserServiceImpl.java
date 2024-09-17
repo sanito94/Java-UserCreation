@@ -4,8 +4,10 @@ import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import userCreation.Java_UserCreation.web.model.UserDto;
 
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -15,7 +17,8 @@ public class UserServiceImpl implements UserService {
 
         int rand_int1 = rand.nextInt(100000);
 
-        return UserDto.builder().id(rand_int1)
+        return UserDto.builder()
+                .id(rand_int1)
                 .firstName("Mitko")
                 .lastName("Muglata")
                 .dateOfBirth("17.04.1994")
@@ -42,7 +45,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(int userId, UserDto user) {
-        
+
+    }
+
+    @Override
+    public void deleteById(int userId) {
+        log.debug("Deleting a user...");
     }
 
 }

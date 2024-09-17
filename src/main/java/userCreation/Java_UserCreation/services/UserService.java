@@ -10,4 +10,6 @@ public interface UserService {
     UserDto saveNewUser(UserDto user);
 
     void updateUser(int userId, UserDto user);
+
+    void deleteById(int userId);
 }

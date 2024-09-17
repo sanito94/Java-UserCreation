@@ -3,6 +3,7 @@ package userCreation.Java_UserCreation.web.controller;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,6 +48,13 @@ public class UserController {
 
         userService.updateUser(userId, user);
 
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping({ "/{userId}" })
+    public ResponseEntity deleteUser(@PathVariable("userId") int userId) {
+        userService.deleteById(userId);
+        
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }
