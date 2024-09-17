@@ -1,13 +1,14 @@
-package userCreation.Java_UserCreation.webModel;
+package userCreation.Java_UserCreation.web.model;
 
+// import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class UserDto {
     private int id;
@@ -16,5 +17,4 @@ public class UserDto {
     private String dateOfBirth;
     private String phoneNumber;
     private String email;
-
 }
